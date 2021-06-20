@@ -12,7 +12,7 @@ import threading
 def mirror_status(update, context):
     message = get_readable_message()
     if len(message) == 0:
-        message = "No Active Downloads! 🤷‍♂️"
+        message = "🤷‍♂️ No Active Downloads!"
         reply_message = sendMessage(message, context.bot, update)
         threading.Thread(target=auto_delete_message, args=(bot, update.message, reply_message)).start()
         return
