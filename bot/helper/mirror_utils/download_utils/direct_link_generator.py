@@ -31,9 +31,9 @@ from bot.helper.ext_utils.exceptions import DirectDownloadLinkException
 def direct_link_generator(link: str):
     """ direct links generator """
     if not link:
-        raise DirectDownloadLinkException("`No links found!`")
+        raise DirectDownloadLinkException("`No Links Found!`")
     elif 'youtube.com' in link or 'youtu.be' in link:
-        raise DirectDownloadLinkException(f"Youtube Link use /{BotCommands.WatchCommand} or /{BotCommands.TarWatchCommand}")
+        raise DirectDownloadLinkException(f"For Youtube Link Use /{BotCommands.WatchCommand} or /{BotCommands.TarWatchCommand}")
     elif 'zippyshare.com' in link:
         return zippy_share(link)
     elif 'yadi.sk' in link:
@@ -77,7 +77,7 @@ def direct_link_generator(link: str):
     elif 'pixeldrain.com' in link:
         return pixeldrain(link)
     else:
-        raise DirectDownloadLinkException(f'No Direct link function found for {link}')
+        raise DirectDownloadLinkException(f'No Direct Link Found For {link}!')
 
 
 def zippy_share(url: str) -> str:
