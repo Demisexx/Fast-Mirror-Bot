@@ -181,24 +181,24 @@ def bot_help(update, context):
 
 
 botcmds = [
-BotCommand(f'{BotCommands.MirrorCommand}', 'Start Mirroring'),
-BotCommand(f'{BotCommands.TarMirrorCommand}','Upload tar (zipped) file'),
-BotCommand(f'{BotCommands.UnzipMirrorCommand}','Extract files'),
-BotCommand(f'{BotCommands.CloneCommand}','Copy file/folder to Drive'),
-BotCommand(f'{BotCommands.CountCommand}','Count file/folder of Drive link'),
-BotCommand(f'{BotCommands.WatchCommand}','Mirror YT-DL support link'),
-BotCommand(f'{BotCommands.TarWatchCommand}','Mirror Youtube playlist link as tar'),
-BotCommand(f'{BotCommands.CancelMirror}','Cancel a task'),
-BotCommand(f'{BotCommands.CancelAllCommand}','Cancel all tasks'),
-BotCommand(f'{BotCommands.DeleteCommand}','Delete file from Drive'),
-BotCommand(f'{BotCommands.ListCommand}',' [query] Searches files in Drive'),
-BotCommand(f'{BotCommands.StatusCommand}','Get Mirror Status message'),
-BotCommand(f'{BotCommands.StatsCommand}','Bot Usage Stats'),
-BotCommand(f'{BotCommands.HelpCommand}','Get Detailed Help'),
-BotCommand(f'{BotCommands.MediaInfoCommand}','Get detailed info about replied media'),
-BotCommand(f'{BotCommands.SpeedCommand}','Check Speed of the host'),
-BotCommand(f'{BotCommands.LogCommand}','Bot Log [owner/sudo only]'),
-BotCommand(f'{BotCommands.RestartCommand}','Restart bot [owner/sudo only]')]
+BotCommand(f'{BotCommands.MirrorCommand}', 'Start Mirroring Files'),
+BotCommand(f'{BotCommands.TarMirrorCommand}','Upload As Tar (Zipped) Files'),
+BotCommand(f'{BotCommands.UnzipMirrorCommand}','Extract Files & Start Mirroring'),
+BotCommand(f'{BotCommands.CloneCommand}','Copy File/Folder To Google Drive'),
+BotCommand(f'{BotCommands.CountCommand}','Count File/Folder Of Drive Links'),
+BotCommand(f'{BotCommands.WatchCommand}','Mirror YT-DL Supported Links'),
+BotCommand(f'{BotCommands.TarWatchCommand}','Mirror Youtube Playlist As Tar (Zipped)'),
+BotCommand(f'{BotCommands.CancelMirror}','Cancel An Processing Task'),
+BotCommand(f'{BotCommands.CancelAllCommand}','Cancel All Processing Tasks'),
+BotCommand(f'{BotCommands.DeleteCommand}','Delete Files From Google Drive'),
+BotCommand(f'{BotCommands.ListCommand}',' [query] Searches Files In Drive'),
+BotCommand(f'{BotCommands.StatusCommand}','Show Mirror Status Message'),
+BotCommand(f'{BotCommands.StatsCommand}','Show Bot Usage Stats'),
+BotCommand(f'{BotCommands.HelpCommand}','Show Detailed Help'),
+BotCommand(f'{BotCommands.MediaInfoCommand}','Show Replied Media Info'),
+BotCommand(f'{BotCommands.SpeedCommand}','Check Speed Of The Host'),
+BotCommand(f'{BotCommands.LogCommand}','Show Bot Logs [Owner Only]'),
+BotCommand(f'{BotCommands.RestartCommand}','Restart The Bot [Owner Only]')]
 
 
 def main():
