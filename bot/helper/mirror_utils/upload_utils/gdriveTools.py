@@ -112,7 +112,7 @@ class GoogleDriveHelper:
                                      resumable=False)
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded using Slam Mirror Bot',
+            'description': 'Uploaded By AnonyCloud',
             'mimeType': mime_type,
         }
         if parent_id is not None:
@@ -128,7 +128,7 @@ class GoogleDriveHelper:
         msg = ''
         try:
             res = self.__service.files().delete(fileId=file_id, supportsTeamDrives=IS_TEAM_DRIVE).execute()
-            msg = "Successfully deleted"
+            msg = "Successfully Deleted!"
         except HttpError as err:
             LOGGER.error(str(err))
             if "File not found" in str(err):
@@ -166,7 +166,7 @@ class GoogleDriveHelper:
         # File body description
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded by Slam Mirror Bot',
+            'description': 'Uploaded By AnonyCloud',
             'mimeType': mime_type,
         }
         try:
