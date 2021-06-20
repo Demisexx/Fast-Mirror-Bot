@@ -10,7 +10,7 @@ from .exceptions import NotSupportedExtractionArchive
 
 def clean_download(path: str):
     if os.path.exists(path):
-        LOGGER.info(f"Cleaning download: {path}")
+        LOGGER.info(f"Cleaning Download: {path}")
         shutil.rmtree(path)
 
 
@@ -136,7 +136,7 @@ def get_base_name(orig_path: str):
     elif orig_path.endswith(".xar"):
         return orig_path.replace(".xar", "")
     else:
-        raise NotSupportedExtractionArchive('File format not supported for extraction')
+        raise NotSupportedExtractionArchive('File Format Not Supported For Extraction')
 
 
 def get_mime_type(file_path):
