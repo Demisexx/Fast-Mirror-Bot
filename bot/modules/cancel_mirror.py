@@ -30,27 +30,27 @@ def cancel_mirror(update, context):
                     keys = list(download_dict.keys())
                     dl = download_dict[mirror_message.message_id]
                 except:
-                    sendMessage("It's not your msg, reply to your mirror msg which was used to start the download to cancel.", context.bot, update)
+                    sendMessage(f"Please Reply To The Mirror Message Which Was Used To Start The Download or <code>/{BotCommands.CancelMirror} GID</code> To Cancel!", context.bot, update)
                     return
         if not update.message.reply_to_message:
             pass
             
     try:
         if dl.status() == "Uploading...📤":
-            sendMessage("Upload in progress, can't cancel.", context.bot, update)
+            sendMessage("Upload in Progress, Can't Cancel.", context.bot, update)
             return
         elif dl.status() == "Archiving...🔐":
-            sendMessage("Archival in progress, can't cancel.", context.bot, update)
+            sendMessage("Archival in Progress, Can't Cancel.", context.bot, update)
             return
         elif dl.status() == "Extracting...📂":
-            sendMessage("Extract in progress, can't cancel.", context.bot, update)
+            sendMessage("Extract in Progress, Can't Cancel.", context.bot, update)
             return
         else:
             dl.download().cancel_download()
             sleep(1)  # Wait a Second For Aria2 To free Resources.
             clean_download(f'{DOWNLOAD_DIR}{mirror_message.message_id}/')
     except:
-        psn = f"Please reply to your mirror msg which was used to start the download or <code>/{BotCommands.CancelMirror} GID</code> to cancel."
+        psn = f"Please Reply To The Mirror Message Which Was Used To Start The Download or <code>/{BotCommands.CancelMirror} GID</code> To Cancel!"
         sendMessage(psn, context.bot, update)
         return
 
