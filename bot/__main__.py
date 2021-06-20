@@ -38,12 +38,12 @@ def stats(update, context):
     stats = f'<b>Bot Uptime:</b> {currentTime}\n' \
             f'<b>Start Time:</b> {current}\n' \
             f'<b>Total Disk Space:</b> {total}\n' \
-            f'<b>Used:</b> {used}  ' \
+            f'<b>Used:</b> {used} | ' \
             f'<b>Free:</b> {free}\n\n' \
             f'📊Data Usage📊\n<b>Upload:</b> {sent}\n' \
             f'<b>Download:</b> {recv}\n\n' \
-            f'<b>CPU:</b> {cpuUsage}%\n' \
-            f'<b>RAM:</b> {memory}%\n' \
+            f'<b>CPU:</b> {cpuUsage}% | ' \
+            f'<b>RAM:</b> {memory}% | ' \
             f'<b>DISK:</b> {disk}%'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
@@ -51,11 +51,11 @@ def stats(update, context):
 def start(update, context):
     start_string = f'''
 Hi Sir, I'm Fast Mirror Bot.
-I Can Mirror All Your Links to Google Drive. I Only Works For @AnonyCloud Group. Type /{BotCommands.HelpCommand} To Get List of Available Commands!
+I Can Mirror All Your Links To Google Drive. I Only Works For @AnonyCloud Group. Type /{BotCommands.HelpCommand} To Get List of Available Commands!
 '''
     buttons = button_build.ButtonMaker()
     buttons.buildbutton("CHANNEL", "https://t.me/AsmSafone")
-    buttons.buildbutton("SUPPORT", "https://t.me/safothebot")
+    buttons.buildbutton("SUPPORT", "https://t.me/Safothebot")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
