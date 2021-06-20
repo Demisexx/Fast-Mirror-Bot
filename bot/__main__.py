@@ -50,12 +50,12 @@ def stats(update, context):
 
 def start(update, context):
     start_string = f'''
-This bot can mirror all your links to Google Drive!
-Type /{BotCommands.HelpCommand} to get a list of available commands
+Hi Sir, I'm Fast Mirror Bot.
+I Can Mirror All Your Links to Google Drive. I Only Works For @AnonyCloud Group. Type /{BotCommands.HelpCommand} To Get List of Available Commands!
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/breakdowns/slam-mirrorbot")
-    buttons.buildbutton("Support Group", "https://t.me/SlamMirrorSupport")
+    buttons.buildbutton("CHANNEL", "https://t.me/AsmSafone")
+    buttons.buildbutton("SUPPORT", "https://t.me/safothebot")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
@@ -65,7 +65,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         else :
             update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else :
-        sendMessage(f"Oops! not a Authorized user.", context.bot, update)
+        sendMessage(f"Oops! You're Not Authorized User.", context.bot, update)
 
 
 def restart(update, context):
@@ -145,35 +145,33 @@ def bot_help(update, context):
 '''
 
     help_string = f'''
-/{BotCommands.HelpCommand}: To get this message
+/{BotCommands.HelpCommand}: To Get This Help Message!
 
-/{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive.
+/{BotCommands.MirrorCommand} [download_url][magnet_link]: Starts Mirroring The Link To Google Drive!
 
-/{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
+/{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts Mirroring & If Downloaded File Is Any Archive, Extracts It To Google Drive!
 
-/{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
+/{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Starts Mirroring & Upload The Archived (.tar) Version Of The Downloaded File!
 
-/{BotCommands.CloneCommand}: Copy file/folder to Google Drive
+/{BotCommands.WatchCommand} [youtube-dl supported link]: Starts Mirror Through YouTube-DL. Click /{BotCommands.WatchCommand} For More Info!
 
-/{BotCommands.CountCommand}: Count file/folder of Google Drive Links
+/{BotCommands.TarWatchCommand} [youtube-dl supported link]: Starts Mirror Through YouTube-DL & Make Archived (.tar) Before Uploading!
 
-/{BotCommands.WatchCommand} [youtube-dl supported link]: Mirror through youtube-dl. Click /{BotCommands.WatchCommand} for more help.
+/{BotCommands.ListCommand} [search term]: Searches The Search Term In The Google Drive, If Found Replies With The Link!
 
-/{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
+/{BotCommands.CancelMirror}: Reply To The Message By Which The Download Was Initiated & That Download Will Be Cancelled!
 
-/{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
+/{BotCommands.CloneCommand}: Copy File / Folder To Google Drive!
 
-/{BotCommands.StatusCommand}: Shows a status of all the downloads
+/{BotCommands.CountCommand}: Count File/Folder of Google Drive Links!
 
-/{BotCommands.ListCommand} [search term]: Searches the search term in the Google Drive, if found replies with the link
+/{BotCommands.StatusCommand}: Shows A Status Of All The Downloads!
 
-/{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
+/{BotCommands.StatsCommand}: Show Stats Of The Machine The Bot Is Hosted On!
 
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
+/{BotCommands.MediaInfoCommand}: Get Detailed Info About Replied Media! (Only For Telegram File)
 
-/{BotCommands.MediaInfoCommand}: Get detailed info about replied media (Only for Telegram file).
-
-/tshelp: Get help for Torrent search module.
+<b>Made With ❤️ By @AsmSafone!</b> 👑
 '''
 
     if CustomFilters.sudo_user(update) or CustomFilters.owner_filter(update):
@@ -209,7 +207,7 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("Restarted successfully!", chat_id, msg_id)
+        bot.edit_message_text("Restarted Successfully!", chat_id, msg_id)
         os.remove(".restartmsg")
     bot.set_my_commands(botcmds)
 
