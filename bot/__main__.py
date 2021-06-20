@@ -20,7 +20,7 @@ from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
 from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, search, delete, speedtest, usage, mediainfo, count, config, updates
 
-now=datetime.now(pytz.timezone('Asia/Jakarta'))
+now=datetime.now(pytz.timezone('Asia/Dhaka'))
 
 
 def stats(update, context):
@@ -40,7 +40,7 @@ def stats(update, context):
             f'<b>Total Disk Space:</b> {total}\n' \
             f'<b>Used:</b> {used} | ' \
             f'<b>Free:</b> {free}\n\n' \
-            f'📊Data Usage📊\n<b>Upload:</b> {sent}\n' \
+            f'📊<b>Data Usage</b>📊\n<b>Upload:</b> {sent}\n' \
             f'<b>Download:</b> {recv}\n\n' \
             f'<b>CPU:</b> {cpuUsage}% | ' \
             f'<b>RAM:</b> {memory}% | ' \
@@ -145,7 +145,7 @@ def bot_help(update, context):
 '''
 
     help_string = f'''
-/{BotCommands.HelpCommand}: To Get This Help Message!
+/{BotCommands.HelpCommand}: To Show This Help Message Again!
 
 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Starts Mirroring The Link To Google Drive!
 
@@ -161,7 +161,7 @@ def bot_help(update, context):
 
 /{BotCommands.CancelMirror}: Reply To The Message By Which The Download Was Initiated & That Download Will Be Cancelled!
 
-/{BotCommands.CloneCommand}: Copy File / Folder To Google Drive!
+/{BotCommands.CloneCommand}: Copy File/Folder To Google Drive!
 
 /{BotCommands.CountCommand}: Count File/Folder of Google Drive Links!
 
@@ -169,7 +169,9 @@ def bot_help(update, context):
 
 /{BotCommands.StatsCommand}: Show Stats Of The Machine The Bot Is Hosted On!
 
-/{BotCommands.MediaInfoCommand}: Get Detailed Info About Replied Media! (Only For Telegram File)
+/tshelp: Show Help For Torrent Search Modules!
+
+/{BotCommands.MediaInfoCommand}: Show Detailed Info About Replied Media! (Only For Telegram File)
 
 <b>Made With ❤️ By @AsmSafone!</b> 👑
 '''
