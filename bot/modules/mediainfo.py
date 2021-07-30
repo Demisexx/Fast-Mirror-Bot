@@ -13,9 +13,9 @@ from bot.helper import post_to_telegraph, runcmd, safe_filename
 async def mediainfo(client, message):
     reply = message.reply_to_message
     if not reply:
-        await message.reply_text("Reply to Media first")
+        await message.reply_text("Reply To Media First !")
         return
-    process = await message.reply_text("`Processing...`")
+    process = await message.reply_text("`Processing ...`")
     x_media = None
     available_media = (
         "audio",
@@ -49,7 +49,8 @@ async def mediainfo(client, message):
 <h2>DETAILS</h2>
 <pre>{out or 'Not Supported'}</pre>
 """
+    title = f"AnonyCloud MediaInfo"
     text_ = media_type.split(".")[-1].upper()
-    link = post_to_telegraph(media_type, body_text)
+    link = post_to_telegraph(title, body_text)
     markup = InlineKeyboardMarkup([[InlineKeyboardButton(text=text_, url=link)]])
     await process.edit_text("ℹ️ <b>MEDIA INFO</b>", reply_markup=markup)
