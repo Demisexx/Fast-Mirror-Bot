@@ -20,8 +20,8 @@ def _watch(bot: Bot, update, isTar=False):
         msg = f"/{BotCommands.WatchCommand} [yt_dl supported link] [quality] |[CustomName] to mirror with youtube_dl.\n\n"
         msg += "<b>Note :- Quality and Custom Name Are Optional. Example of Quality: audio, 144, 240, 360, 480, 720, 1080, 2160</b>"
         msg += "\n\n<b>If You Want To Use Custom File Name, Please Enter Your Desired File Name After |</b>"
-        msg += f"\n\nExample :-\n<code>/{BotCommands.WatchCommand} https://youtu.be/Pk_TthHfLeE 720 |Safone</code>\n\n"
-        msg += "This File Will Be Downloaded In <b>720p Quality</b> & It's Name Will Be <b>Safone</b> !👍"
+        msg += f"\n\nExample :-\n<code>/{BotCommands.WatchCommand} https://youtu.be/Pk_TthHfLeE 720 |New Name</code>\n\n"
+        msg += "This File Will Be Downloaded In <b>720p Quality</b> & It's Name Will Be <b>New Name</b> !👍"
         sendMessage(msg, bot, update)
         return
     try:
