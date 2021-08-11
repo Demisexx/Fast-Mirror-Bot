@@ -631,7 +631,7 @@ class GoogleDriveHelper:
 
             msg = f"<b>🔎 Search Results:</b> \nFound {len(response['files'])} Results For <code>{fileName}</code>"
             buttons = button_build.ButtonMaker()   
-            buttons.buildbutton("SHOW 👀", f"https://telegra.ph/{self.path[0]}")
+            buttons.buildbutton("👀 VIEW", f"https://telegra.ph/{self.path[0]}")
 
             return msg, InlineKeyboardMarkup(buttons.build_menu(1))
 
